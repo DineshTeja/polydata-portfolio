@@ -1,6 +1,6 @@
 import React from "react";
 
-const WorkCard = ({ img, name, dates, description, onClick }) => {
+const InvolvCard = ({ img, name, dates, description, onClick }) => {
   return (
     <div
       className="overflow-hidden rounded-lg p-2 laptop:p-4 first:ml-0 link"
@@ -22,8 +22,11 @@ const WorkCard = ({ img, name, dates, description, onClick }) => {
       <h2 className="text-xl opacity-50">
         {dates ? dates : "Dates"}
       </h2>
+      <h2 className="text-xl opacity-50">
+        {description ? description : "Description"}
+      </h2>
     </div>
   );
 };
 
-export default WorkCard;
+export default InvolvCard;
