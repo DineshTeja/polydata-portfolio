@@ -114,7 +114,7 @@ export default function Home() {
 
           <div className="flex-1 flex justify-end items-center">
           <Image
-            src="/images/dinesh_headshot copy.png" // Replace with the path to your image
+            src="/images/dinesh_headshot.png" // Replace with the path to your image
             alt="Dinesh Vasireddy"
             width={500} // specify the width
             height={500} // and the height
