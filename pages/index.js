@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
@@ -11,11 +11,14 @@ import Head from "next/head";
 import Button from "../components/Button";
 import Link from "next/link";
 import Cursor from "../components/Cursor";
-import Image from 'next/image'
+import Image from 'next/image';
+import { useTheme } from "next-themes";
+import { useRouter } from "next/router";
 
 // Local Data
 import data from "../data/portfolio.json";
 import { resume } from "../data/portfolio.json";
+import { name, showResume } from "../data/portfolio.json";
 
 export default function Home() {
   // Ref
@@ -26,7 +29,9 @@ export default function Home() {
   const textThree = useRef();
   const textFour = useRef();
   const textFive = useRef();
-
+  const router = useRouter();
+  const theme = useTheme();
+  const [mount, setMount] = useState(false);
 
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -52,6 +57,13 @@ export default function Home() {
       { y: 0, x: 0, transform: "scale(1)" }
     );
   }, []);
+
+  useEffect(() => {
+    setMount(true);
+    if (!showResume) {
+      router.push("/");
+    }
+  }, [router]);
 
   return (
     <div className={`relative ${data.showCursor && "cursor-none"}`}>
@@ -213,7 +225,7 @@ export default function Home() {
                   {resume.languages.map((language, index) => (
                     <div
                       key={index}
-                      className="px-2 py-1 mb-1 bg-slate-700 text-white rounded hover:bg-blue-300 transition-colors duration-200"
+                      className= {`px-2 py-1 mb-1 ${mount && theme.theme === "dark" ? "bg-slate-700 hover:bg-slate-500" : "bg-gray-100 hover:bg-gray-50"} rounded transition-colors duration-200`}
                     >
                       {language}
                     </div>
@@ -230,7 +242,7 @@ export default function Home() {
                   {resume.frameworks.map((framework, index) => (
                     <div
                       key={index}
-                      className="px-2 py-1 mb-1 bg-slate-700 text-white rounded hover:bg-blue-300 transition-colors duration-200"
+                      className= {`px-2 py-1 mb-1 ${mount && theme.theme === "dark" ? "bg-slate-700 hover:bg-slate-500" : "bg-gray-100 hover:bg-gray-50"} rounded transition-colors duration-200`}
                     >
                       {framework}
                     </div>
@@ -246,7 +258,7 @@ export default function Home() {
                   {resume.others.map((other, index) => (
                     <div
                       key={index}
-                      className="px-2 py-1 mb-1 bg-slate-700 text-white rounded hover:bg-blue-300 transition-colors duration-200"
+                      className= {`px-2 py-1 mb-1 ${mount && theme.theme === "dark" ? "bg-slate-700 hover:bg-slate-500" : "bg-gray-100 hover:bg-gray-50"} rounded transition-colors duration-200`}
                     >
                       {other}
                     </div>

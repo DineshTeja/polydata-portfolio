@@ -113,7 +113,7 @@ const Resume = () => {
                         {resume.languages.map((language, index) => (
                           <div
                             key={index}
-                            className="px-2 py-1 mb-1 bg-slate-700 text-white rounded hover:bg-blue-300 transition-colors duration-200"
+                            className= {`px-2 py-1 mb-1 ${mount && theme.theme === "dark" ? "bg-slate-700 hover:bg-slate-500" : "bg-gray-100 hover:bg-gray-50"} rounded transition-colors duration-200`}
                           >
                             {language}
                           </div>
@@ -130,7 +130,7 @@ const Resume = () => {
                         {resume.frameworks.map((framework, index) => (
                           <div
                             key={index}
-                            className="px-2 py-1 mb-1 bg-slate-700 text-white rounded hover:bg-blue-300 transition-colors duration-200"
+                            className= {`px-2 py-1 mb-1 ${mount && theme.theme === "dark" ? "bg-slate-700 hover:bg-slate-500" : "bg-gray-100 hover:bg-gray-50"} rounded transition-colors duration-200`}
                           >
                             {framework}
                           </div>
