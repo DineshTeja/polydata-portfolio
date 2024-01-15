@@ -16,13 +16,13 @@ const InvolvCard = ({ img, name, dates, description, onClick }) => {
           src={img}
         ></img>
       </div>
-      <h1 className="mt-5 text-3xl font-medium">
+      <h1 className="mt-5 text-3xl font-medium mob:text-2xl">
         {name ? name : "Project Name"}
       </h1>
-      <h2 className="text-xl opacity-50">
+      <h2 className="text-xl laptop:text-xl opacity-50 mob:text-lg">
         {dates ? dates : "Dates"}
       </h2>
-      <h2 className="text-xl opacity-50">
+      <h2 className="text-xl opacity-70 laptop:text-xl mob:text-lg">
         {description ? description : "Description"}
       </h2>
     </div>

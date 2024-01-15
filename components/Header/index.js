@@ -17,6 +17,10 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
     setMounted(true);
   }, []);
 
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <>
       <Popover className="block tablet:hidden mt-5">

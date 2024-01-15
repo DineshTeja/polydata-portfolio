@@ -143,7 +143,7 @@ export default function Home() {
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-3xl font-bold">Practical Projects.</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-4 tablet:grid-cols-3 mob:grid-cols-1 gap-4">
+          <div className="mt-5 laptop:mt-10 grid grid-cols-4 laptop:grid-cols-3 tablet:grid-cols-3 mob:grid-cols-2 gap-4">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
