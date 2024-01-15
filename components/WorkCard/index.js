@@ -7,7 +7,7 @@ const WorkCard = ({ img, name, dates, description, onClick }) => {
       onClick={onClick}
     >
       <div
-        className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-48 mob:h-auto"
+        className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-auto"       
         style={{ height: "300px"}}
       >
         <img
@@ -16,10 +16,10 @@ const WorkCard = ({ img, name, dates, description, onClick }) => {
           src={img}
         ></img>
       </div>
-      <h1 className="mt-5 text-3xl font-medium">
+      <h1 className="mt-5 text-3xl font-medium mob:text-2xl">
         {name ? name : "Project Name"}
       </h1>
-      <h2 className="text-xl opacity-50">
+      <h2 className="text-xl opacity-50 mob:text-lg">
         {dates ? dates : "Dates"}
       </h2>
     </div>

@@ -68,7 +68,7 @@ export default function Home() {
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
         />
-        <div className="flex flex-col laptop:flex-row items-center justify-between mt-10">
+        <div className="flex flex-col laptop:flex-row items-center justify-between mt-10 mob:mt-2 mob:ml-3 mob:items-center">
           <div className="flex-initial mr-4 laptop:mr-8">
             <div className="laptop:mt-20 mt-10">
               <div className="mt-5">
@@ -112,21 +112,21 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex-1 flex justify-end items-center">
-          <Image
-            src="/images/dinesh_headshot.png" // Replace with the path to your image
-            alt="Dinesh Vasireddy"
-            width={500} // specify the width
-            height={500} // and the height
-            className="object-cover rounded-full"
-          />
+          <div className="flex-1 flex justify-end items-center mob:w-4/5 mob:mt-5">
+            <Image
+              src="/images/dinesh_headshot.png"
+              alt="Dinesh Vasireddy"
+              width={500}
+              height={500}
+              className="object-cover rounded-full"
+            />
           </div>
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-3xl font-bold">Current Involvements.</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-4 tablet:grid-cols-1 gap-4">
+          <div className="mt-5 laptop:mt-10 grid grid-cols-4 tablet:grid-cols-1  mob:grid-cols-1 gap-4">
             {data.involvements.map((involvement) => (
               <InvolvCard
                 key={involvement.id}
@@ -143,7 +143,7 @@ export default function Home() {
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-3xl font-bold">Practical Projects.</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-4 tablet:grid-cols-3 gap-4">
+          <div className="mt-5 laptop:mt-10 grid grid-cols-4 tablet:grid-cols-3 mob:grid-cols-1 gap-4">
             {data.projects.map((project) => (
               <WorkCard
                 key={project.id}
@@ -160,13 +160,13 @@ export default function Home() {
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <h1 className="text-3xl font-bold">Publications.</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-4 tablet:grid-cols-1 gap-4">
+          <div className="mt-5 laptop:mt-10 grid grid-cols-4 tablet:grid-cols-1  mob:grid-cols-1 gap-4">
             {data.publications.map((publication) => (
               <WorkCard
                 key={publication.id}
                 img={publication.imageSrc}
                 name={publication.title}
-                description={publication.description}
+                dates={publication.dates}
                 onClick={() => window.open(publication.url)}
               />
             ))}
@@ -197,7 +197,7 @@ export default function Home() {
         <div className="mt-10 laptop:mt-20 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="text-3xl font-bold">About.</h1>
           <div className="opacity-70">
-            <p className="mt-5 text-xl laptop:text-3xl w-full laptop:w-full">
+            <p className="mt-5 text-xl laptop:text-3xl w-full laptop:w-full mob:text-lg">
               {data.aboutpara}
             </p>
           </div>

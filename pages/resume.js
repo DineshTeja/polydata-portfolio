@@ -89,7 +89,7 @@ const Resume = () => {
               <div className="mt-10 laptop:mt-10 p-0 laptop:p-0" ref={workRef}>
                 <h1 className="text-2xl font-bold">Independent Project Work</h1>
 
-                <div className="mt-2 laptop:mt-2 grid grid-cols-3 tablet:grid-cols-1 gap-0">
+                <div className="mt-2 laptop:mt-2 grid grid-cols-3 mob:grid-cols-1 tablet:grid-cols-1 gap-0">
                   {data.projects.map((project) => (
                     <ProjCard
                       key={project.id}
