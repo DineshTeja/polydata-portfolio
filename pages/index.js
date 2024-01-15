@@ -92,15 +92,15 @@ export default function Home() {
                 </h2>
                 <h1
                   ref={textFour}
-                  className="text-xl tablet:text-3xl laptop:text-4xl laptopl:text-4xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                  className="text-xl tablet:text-xl laptop:text-2xl laptopl:text-4xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
                 >
-                  <div className="opacity-90 text-slate-100">
+                  <div className="opacity-90">
                     {data.headerTaglineFour}
                   </div>
                 </h1>
                 <h2
                   ref={textFive}
-                  className="text-xl tablet:text-3xl laptop:text-3xl laptopl:text-3xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
+                  className="text-lg tablet:text-lg laptop:text-xl laptopl:text-3xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
                 >
                   <div className="opacity-50">
                     {data.headerTaglineFive}
