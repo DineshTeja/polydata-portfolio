@@ -17,13 +17,13 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
+  if (!mounted || !theme) {
     return null;
   }
 
   return (
     <>
-      <Popover className="block tablet:hidden mt-5">
+      <Popover className="block tablet:hidden mt-5 mob:visible">
         {({ open }) => (
           <>
             <div className="flex items-center justify-between p-2 laptop:p-0">
@@ -52,7 +52,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
 
                 <Popover.Button>
                   <img
-                    className="h-5"
+                    className="h-5 mob:visible"
                     src={`/images/${
                       !open
                         ? theme === "dark"
