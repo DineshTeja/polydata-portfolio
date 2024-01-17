@@ -4,6 +4,7 @@ import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
 import InvolvCard from "../components/InvolvCard";
+import TestimonialCard from "../components/TestimonialCard";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
@@ -106,7 +107,7 @@ export default function Home() {
                   ref={textFour}
                   className="text-xl tablet:text-xl laptop:text-2xl laptopl:text-4xl p-1 tablet:p-2 text-bold w-full laptop:w-full"
                 >
-                  <div className="opacity-90">
+                  <div className="opacity-70">
                     {data.headerTaglineFour}
                   </div>
                 </h1>
@@ -126,7 +127,7 @@ export default function Home() {
 
           <div className="flex-1 flex justify-end items-center mob:w-4/5 mob:mt-5">
             <Image
-              src="/images/dinesh_headshot.png"
+              src="/images/polydatasmaller_web.png"
               alt="Dinesh Vasireddy"
               width={500}
               height={500}
@@ -136,24 +137,23 @@ export default function Home() {
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-3xl font-bold">Current Involvements.</h1>
+          <h1 className="text-3xl font-bold">Testimonials</h1>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-4 tablet:grid-cols-1  mob:grid-cols-1 gap-4">
-            {data.involvements.map((involvement) => (
-              <InvolvCard
-                key={involvement.id}
-                img={involvement.imageSrc}
-                name={involvement.title}
-                dates={involvement.dates}
-                description={involvement.description}
-                onClick={() => window.open(involvement.url)}
+          <div className="mt-5 laptop:mt-10 grid grid-cols-4 laptop:grid-cols-3 tablet:grid-cols-3 mob:grid-cols-1 gap-4">
+            {data.testimonials.map((testimonial) => (
+              <TestimonialCard
+                key={testimonial.id}
+                img={testimonial.imageSrc}
+                name={testimonial.name}
+                testimonial={testimonial.testimonial}
+                onClick={() => window.open(testimonial.url)}
               />
             ))}
           </div>
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-3xl font-bold">Practical Projects.</h1>
+          <h1 className="text-3xl font-bold">Products</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-4 laptop:grid-cols-3 tablet:grid-cols-3 mob:grid-cols-2 gap-4">
             {data.projects.map((project) => (
@@ -169,43 +169,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-3xl font-bold">Publications.</h1>
-
-          <div className="mt-5 laptop:mt-10 grid grid-cols-4 tablet:grid-cols-1  mob:grid-cols-1 gap-4">
-            {data.publications.map((publication) => (
-              <WorkCard
-                key={publication.id}
-                img={publication.imageSrc}
-                name={publication.title}
-                dates={publication.dates}
-                onClick={() => window.open(publication.url)}
-              />
-            ))}
-          </div>
-        </div>
-
-        {/* <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-          <h1 className="text-2xl text-bold">Services.</h1>
-          <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
-            {data.services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                name={service.title}
-                description={service.description}
-              />
-            ))}
-          </div>
-        </div> */}
-
-        {/* This button should not go into production */}
-        {process.env.NODE_ENV === "development" && (
-          <div className="fixed bottom-5 right-5">
-            <Link href="/edit">
-              <Button type="primary">Edit Data</Button>
-            </Link>
-          </div>
-        )}
         <div className="mt-10 laptop:mt-20 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="text-3xl font-bold">About.</h1>
           <div className="opacity-70">
@@ -215,45 +178,33 @@ export default function Home() {
           </div>
         </div>
 
+        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
+          <h1 className="text-3xl font-bold">Services.</h1>
+          <div className="mt-5 tablet:m-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
+            {data.services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                name={service.title}
+                description={service.description}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* This button should not go into production */}
+        {process.env.NODE_ENV === "development" && (
+          <div className="fixed bottom-5 right-5">
+            <Link href="/edit">
+              <Button type="primary">Edit Data</Button>
+            </Link>
+          </div>
+        )}
+
         <div className="mt-10 laptop:mt-20 p-2 laptop:p-0">
-          <h1 className="text-3xl font-bold">Skills.</h1>
+          <h1 className="text-3xl font-bold">Focuses.</h1>
           <div className="flex mob:flex-col desktop:flex-row justify-between">
-            {resume.languages && (
-              <div className="mt-2 mob:mt-5">
-                <h2 className="text-xl">Languages</h2>
-                <div className="flex flex-wrap gap-2">
-                  {resume.languages.map((language, index) => (
-                    <div
-                      key={index}
-                      className= {`px-2 py-1 mb-1 ${mount && theme.theme === "dark" ? "bg-slate-700 hover:bg-slate-500" : "bg-gray-100 hover:bg-gray-50"} rounded transition-colors duration-200`}
-                    >
-                      {language}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-
-            {resume.frameworks && (
-              <div className="mt-2 mob:mt-5">
-                <h2 className="text-xl">Frameworks</h2>
-                <div className="flex flex-wrap gap-2">
-                  {resume.frameworks.map((framework, index) => (
-                    <div
-                      key={index}
-                      className= {`px-2 py-1 mb-1 ${mount && theme.theme === "dark" ? "bg-slate-700 hover:bg-slate-500" : "bg-gray-100 hover:bg-gray-50"} rounded transition-colors duration-200`}
-                    >
-                      {framework}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {resume.others && (
-              <div className="mt-2 mob:mt-5">
-                <h2 className="text-xl">Others</h2>
+              <div className="mt-2">
                 <div className="flex flex-wrap gap-2">
                   {resume.others.map((other, index) => (
                     <div

@@ -23,8 +23,11 @@ body {
   filter: blur(40px);
   background: radial-gradient(
     circle,
-    rgba(248, 107, 223, 1) 0%,
-    rgba(107, 107, 248, 0.8) 100%
+    /* rgba(248, 107, 223, 1) 0%,
+    /* rgba(107, 107, 248, 0.8) 100% */
+    /* rgba(107, 107, 248, 0.8) 100% */
+    rgba(255, 235, 59, 1) 0%, /* Yellow */
+    rgba(158, 158, 158, 0.8) 100% /* Grey */
   );
 }
 .gradient-circle-bottom {
@@ -38,8 +41,10 @@ body {
   filter: blur(40px);
   background: radial-gradient(
     circle,
-    rgba(248, 107, 223, 1) 0%,
-    rgba(107, 107, 248, 0.8) 100%
+    /* rgba(248, 107, 223, 1) 0%,
+    rgba(107, 107, 248, 0.8) 100% */
+    rgba(255, 235, 59, 1) 0%, /* Yellow */
+    rgba(158, 158, 158, 0.8) 100% /* Grey */
   );
 }
 
