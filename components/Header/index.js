@@ -17,7 +17,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
     setMounted(true);
   }, []);
 
-  // setTheme('light');
+  setTheme('light');
 
   // useEffect(() => {
   //   setMounted(true);
