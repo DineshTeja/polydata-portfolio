@@ -18,9 +18,9 @@ const TestimonialCard = ({ img, name, testimonial, onClick }) => {
         <h1 className="mt-5 text-3xl font-medium mob:text-2xl">
           {name ? name : "Client Name"}
         </h1>
-        <h2 className="text-xl opacity-50 mob:text-lg">
+        {/* <h2 className="text-xl opacity-50 mob:text-lg">
           {testimonial ? testimonial : "Testimonial"}
-        </h2>
+        </h2> */}
       </div>
     </div>
   );
