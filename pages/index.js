@@ -145,10 +145,23 @@ export default function Home() {
                 key={testimonial.id}
                 img={testimonial.imageSrc}
                 name={testimonial.name}
+                info={testimonial.info}
                 testimonial={testimonial.testimonial}
                 onClick={() => window.open(testimonial.url)}
               />
             ))}
+          </div>
+        </div>
+
+        <div className="mt-10 laptop:mt-20 p-2 laptop:p-0" ref={aboutRef}>
+          <h1 className="text-3xl font-bold">About.</h1>
+          <div className="opacity-70">
+            <p className="mt-5 text-xl laptop:text-3xl w-full laptop:w-full mob:text-lg">
+              {data.aboutpara}
+            </p>
+            <p className="mt-5 text-xl laptop:text-3xl w-full laptop:w-full mob:text-lg">
+              {data.aboutparasecond}
+            </p>
           </div>
         </div>
 
@@ -166,15 +179,6 @@ export default function Home() {
                 onClick={() => window.open(project.url)}
               />
             ))}
-          </div>
-        </div>
-
-        <div className="mt-10 laptop:mt-20 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="text-3xl font-bold">About.</h1>
-          <div className="opacity-70">
-            <p className="mt-5 text-xl laptop:text-3xl w-full laptop:w-full mob:text-lg">
-              {data.aboutpara}
-            </p>
           </div>
         </div>
 

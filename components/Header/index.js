@@ -17,6 +17,16 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
     setMounted(true);
   }, []);
 
+  // setTheme('light');
+
+  // useEffect(() => {
+  //   setMounted(true);
+  //   // Set the default theme to light
+  //   if (!theme) {
+  //     setTheme('light');
+  //   }
+  // }, [theme, setTheme]);
+
   if (!mounted || !theme) {
     return null;
   }
