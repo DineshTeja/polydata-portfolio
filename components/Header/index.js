@@ -94,7 +94,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       onClick={() => router.push("/products")}
                       classes="first:ml-1"
                     >
-                      Products
+                      Public Products
                     </Button>
                   )}
 
@@ -118,7 +118,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       onClick={() => router.push("/products")}
                       classes="first:ml-1"
                     >
-                      Products
+                      Public Products
                     </Button>
                   )}
 
@@ -157,7 +157,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 onClick={() => router.push("/products")}
                 classes="first:ml-1"
               >
-                Products
+                Public Products
               </Button>
             )}
 
@@ -187,7 +187,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 onClick={() => router.push("/products")}
                 classes="first:ml-1"
               >
-                Products
+                Public Products
               </Button>
             )}
 

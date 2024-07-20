@@ -46,7 +46,7 @@ const Resume = () => {
           <div className="mt-10 w-full flex flex-col items-center">
             <div className="gradient-circle"></div>
             <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-              <h1 className="text-3xl font-bold">Products</h1>
+              <h1 className="text-3xl font-bold">Public Products</h1>
 
               <div className="mt-5 laptop:mt-10 grid grid-cols-4 laptop:grid-cols-3 tablet:grid-cols-2 mob:grid-cols-2 gap-4">
                 {data.projects.map((project) => (
